@@ -1,0 +1,81 @@
+/* Light Theme (Default) */
+:root[data-theme="light"] {
+    --color-text: #2d2d2d;
+    --color-text-light: #767676;
+    --color-background: #ffffff;
+    --color-surface: #f8f9fa;
+    --color-primary: #4a90e2;
+    --color-secondary: #50e3c2;
+    --color-error: #dc3545;
+    --color-success: #28a745;
+    
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Theme */
+:root[data-theme="dark"] {
+    --color-text: #e1e1e1;
+    --color-text-light: #a0a0a0;
+    --color-background: #121212;
+    --color-surface: #1e1e1e;
+    --color-primary: #64b5f6;
+    --color-secondary: #4db6ac;
+    --color-error: #f44336;
+    --color-success: #4caf50;
+    
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Theme Transition */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Theme-specific Overrides */
+[data-theme="dark"] .card {
+    background-color: #1e1e1e;
+}
+
+[data-theme="dark"] .header {
+    background-color: #121212;
+    border-bottom: 1px solid #2d2d2d;
+}
+
+[data-theme="dark"] .nav__link {
+    color: #e1e1e1;
+}
+
+[data-theme="dark"] .nav__link:hover {
+    color: var(--color-primary);
+}
+
+/* Theme Toggle Animation */
+.theme-toggle {
+    background: none;
+    border: none;
+    padding: var(--spacing-xs);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(45deg);
+}
+
+.theme-toggle__icon {
+    fill: currentColor;
+    transition: fill 0.3s ease;
+}
+
+/* Blob Colors for Dark Theme */
+[data-theme="dark"] .blob--1 {
+    background: color-mix(in srgb, var(--color-primary) 80%, transparent);
+}
+
+[data-theme="dark"] .blob--2 {
+    background: color-mix(in srgb, var(--color-secondary) 80%, transparent);
+}
